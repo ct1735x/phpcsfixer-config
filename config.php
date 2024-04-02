@@ -1,19 +1,19 @@
 <?php
 
 $config = new PhpCsFixer\Config();
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__)
+    ->ignoreUnreadableDirs()
+    ->ignoreDotFiles(true)
+    ->ignoreVCS(true)
+    ->ignoreVCSIgnored(false)
+    ->files()
+    ->name('*.php')
+    ->exclude(['.idea', 'bootstrap', 'node_modules', 'public', 'resources', 'storage', 'vendor']);
 
 return $config
     ->setRiskyAllowed(true)
-    ->setFinder(PhpCsFixer\Finder::create()
-        ->in(__DIR__)
-        ->ignoreUnreadableDirs()
-        ->ignoreDotFiles(true)
-        ->ignoreVCS(true)
-        ->ignoreVCSIgnored(false)
-        ->files()
-        ->name('*.php')
-        ->exclude(['.idea', 'bootstrap', 'node_modules', 'public', 'resources', 'storage', 'vendor'])
-    )
+    ->setFinder($finder)
     ->setRules([
         'align_multiline_comment' => true,
         'array_indentation' => true,
