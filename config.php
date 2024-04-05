@@ -73,7 +73,7 @@ return $config
         'numeric_literal_separator' => true,
         'object_operator_without_whitespace' => true,
         'operator_linebreak' => true,
-        'ordered_class_elements' => true,
+        'ordered_class_elements' => ['case_sensitive' => true,'sort_algorithm' => 'alpha'],
         'ordered_imports' => true,
         'ordered_interfaces' => true,
         'phpdoc_add_missing_param_annotation' => true,
